@@ -32,11 +32,9 @@ export default async function Home() {
   const markup = { __html: data };
 
   return (
-      <div className="dialog-off-canvas-main-canvas">
-        <div className="layout-container">
-          <h1 className="site-title">Vara.ouka.fi</h1>
-          <div dangerouslySetInnerHTML={markup} />
-        </div>
-      </div>
+    <div className="layout-container">
+      <h1 className="site-title">Vara.ouka.fi</h1>
+      <div dangerouslySetInnerHTML={markup} />
+    </div>
   );
 }

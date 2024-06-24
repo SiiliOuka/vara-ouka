@@ -32,3 +32,44 @@ a:hover {
   background-color: #001E96;
   text-decoration: none;
 }
+
+header .header-wrapper {
+  max-width: 1600px;
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.region-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 32px 0 28px 0;
+  justify-content: right;
+}
+
+.block-system-branding-block {
+  margin-right: auto;
+}
+
+.block-system-branding-block img {
+  max-width: 108px;
+}
+
+@media only screen and (max-width: 768px) {
+  .block-system-branding-block img {
+    max-width: 152px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .region-header {
+    padding: 32px 0;
+  }
+
+  .block-system-branding-block img {
+    max-width: 184px;
+  }
+}
+
