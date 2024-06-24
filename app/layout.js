@@ -1,16 +1,21 @@
+"use client";
+
 import { Inter } from "next/font/google";
+import { usePathname } from 'next/navigation';
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Oukan vara-sivusto",
-  description: "Vara-sivusto on käytössä silloin kun pääsivustolla on teknisiä ongelmia.",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  let locale = 'fi'; // default locale
+
+  if (pathname.startsWith('/en')) {
+    locale = 'en';
+  }
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={inter.className}>{children}</body>
     </html>
   );

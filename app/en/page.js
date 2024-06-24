@@ -1,10 +1,10 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "..//page.module.css";
 import { GraphQLClient } from 'graphql-request';
 
 export const metadata = {
-    title: "Oukan vara-sivusto",
-    description: "Vara-sivusto on käytössä silloin kun pääsivustolla on teknisiä ongelmia.",
+    title: "Ouka backup site",
+    description: "The backup site is used when the main site has technical problems.",
 };
 
 async function getData() {
@@ -16,7 +16,7 @@ async function getData() {
   );
 
   const query = `query PageContents {
-    pageContents(locales: fi_FI) {
+    pageContents(locales: en) {
         content {
           html
         }
@@ -27,7 +27,7 @@ async function getData() {
   return data.pageContents[0].content.html
 }
 
-export default async function Home() {
+export default async function Page() {
   const data = await getData();
   const markup = { __html: data };
 
