@@ -1,0 +1,39 @@
+/**
+ * Media queries.
+ *
+ * Media query mixins.
+ */
+
+/**
+ * Media query below.
+ *
+ * @param {*} $bp - Must be set in pixels.
+ */
+@mixin mq-below($bp) {
+  @media all and (max-width: $bp - 1px) {
+    @content;
+  }
+}
+
+/**
+ * Media query above.
+ *
+ * @param {*} $bp - Must be set in pixels.
+ */
+@mixin mq-above($bp) {
+  @media all and (min-width: $bp) {
+    @content;
+  }
+}
+
+/**
+ * Media query between.
+ *
+ * @param {*} $bp1 - Must be set in pixels.
+ * @param {*} $bp1 - Must be set in pixels.
+ */
+@mixin mq-between($bp1, $bp2) {
+  @media all and (min-width: $bp1) and (max-width: $bp2 - 1px) {
+    @content;
+  }
+}

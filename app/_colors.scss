@@ -1,0 +1,109 @@
+/**
+ * Color variables.
+ *
+ * These colors should be used with the usecolor() function, that utilizes the $defaultColors map.
+ */
+
+$c-white: #ffffff;
+$c-black: #000000;
+
+$c-gray-100: #F2F7FD;
+$c-gray-150: #CCC;
+$c-gray-200: #DDE0E9;
+$c-gray-300: #CED1DE;
+$c-gray-400: #6E7593;
+$c-gray-500: #2C2E35;
+
+$c-blue-50: #E9F2FB;
+$c-blue-75: #EEF5FC;
+$c-blue-100: #F5F7FF;
+$c-blue-125: #D0E3F6;
+$c-blue-150: #0071CC;
+$c-blue-200: #CCD2EA;
+$c-blue-300: #99A5D5;
+$c-blue-400: #193BC3;
+$c-blue-500: #0D2DAB;
+$c-blue-600: #001E96;
+$c-blue-700: #02176E;
+$c-blue-800: #000F4D;
+
+$c-aqua-100: #00DBFF;
+$c-aqua-200: #55C8FF;
+$c-aqua-300: #008CFF;
+
+$c-magenta-100: #FFF5FA;
+$c-magenta-150: #FCDEDE;
+$c-magenta-175: #FFF4F4;
+$c-magenta-200: #FFBCDB;
+$c-magenta-300: #FC86BD;
+$c-magenta-400: #F556A0;
+$c-magenta-500: #E10069;
+$c-magenta-600: #B4125E;
+$c-magenta-700: #95084A;
+$c-magenta-800: #720236;
+$c-magenta-900: #4D0024;
+
+$c-yellow-100: #FAAF3C;
+
+$c-orange-100: #F05A23;
+
+$c-red-100: #F05A5A;
+$c-red-200: #AA0000;
+
+$c-green-100: #28D74B;
+$c-green-200: #006E0A;
+
+$defaultColors: (
+  'white': $c-white,
+  'black': $c-black,
+  'text': $c-black,
+  'text-form-placeholder': $c-gray-400,
+  'text-form-description': $c-gray-500,
+  'text-highlight': $c-black, // NOT SET.
+  'text-inverse': $c-white,
+  'heading-primary': $c-black,
+  'heading-secondary': $c-black, // NOT SET.
+  'heading-tertiary': $c-black, // NOT SET.
+  'background-primary': $c-gray-100,
+  'background-secondary': $c-blue-75,
+  'background-tertiary': $c-magenta-100,
+  'background-inverse': $c-black, // NOT SET.
+  'primary': $c-blue-600,
+  'primary-accent': $c-blue-700,
+  'primary-accent-dark': $c-blue-800,
+  'secondary': $c-aqua-100,
+  'tertiary': $c-magenta-500,
+  'tertiary-accent': $c-magenta-600,
+  'link': $c-magenta-500,
+  'link-border': $c-magenta-400,
+  'border': $c-black, // NOT SET.
+  'accent-high': $c-black, // NOT SET.
+  'highlight': $c-black, // NOT SET.
+  'muted': $c-black, // NOT SET.
+  'warning': $c-black, // NOT SET.
+  'error': $c-magenta-150,
+  'message': $c-black, // NOT SET.
+  'outline': $c-black, // NOT SET.
+  'table-header': $c-blue-50,
+  'accordion-title': $c-blue-50,
+  'accordion-content': $c-gray-100,
+  'image-caption': $c-gray-500,
+  'oulu-background-3': $c-blue-50,
+  'oulu-background-4':$c-blue-125,
+  'filter-separator': $c-gray-200,
+  'footer-secondary': $c-gray-500,
+  'iframe-consent': $c-gray-300,
+  'search-link': $c-gray-500,
+  'unpublished': $c-magenta-175,
+  'disabled': $c-gray-150,
+);
+
+// Create custom properties for default colors.
+:root {
+  @each $name, $color in $defaultColors {
+    --c-#{$name}: #{$color};
+  }
+}
+
+
+

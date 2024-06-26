@@ -1,0 +1,189 @@
+/**
+ * Generic header styles.
+ */
+
+/**
+ * Heading base.
+ */
+@mixin heading-base(
+  $font-size,
+  $line-height,
+  $color: usecolor('heading-secondary'),
+  $color-link: usecolor('heading-secondary'),
+  $color-link-hover: usecolor('link'),
+  $margin: 0 0 $space-150,
+  $font-weight: 900,
+  $font-family: $font-family-oulun-graadi,
+  $font-feature-settings: $font-feature-settings-base,
+  $letter-spacing: 0.01 * $font-size,
+) {
+  color: $color;
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $margin;
+  font-family: $font-family;
+  font-feature-settings: $font-feature-settings;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  width: auto;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: $color-link;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-link-hover;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include mq-below($bp-small) {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+  }
+}
+
+/**
+ * Heading XL (H1) primary.
+ */
+@mixin heading-xl-primary() {
+  @include heading-base(
+    $font-size: $fontSize-450,
+    $line-height: $space-350,
+    $color: usecolor('heading-primary'),
+    $color-link: usecolor('heading-primary'),
+    $margin: 0 0 $space-300,
+    $font-weight: 900,
+    $font-family: $font-family-oulun-graadi,
+  );
+
+  @include mq-above($bp-small) {
+    @include heading-base(
+      $font-size: $fontSize-550,
+      $line-height: $space-500,
+      $color: usecolor('heading-primary'),
+      $color-link: usecolor('heading-primary'),
+      $margin: 0 0 $space-300,
+      $font-weight: 900,
+      $font-family: $font-family-oulun-graadi,
+      $letter-spacing: 0.05 * $fontSize-200,
+    );
+  }
+}
+
+/**
+ * Heading L (H2) primary.
+ */
+@mixin heading-large-primary() {
+  @include heading-base(
+    $font-size: $fontSize-425,
+    $line-height: $space-300,
+    $font-family: $font-family-oulun-graadi
+  );
+
+  @include mq-above($bp-small) {
+    @include heading-base(
+      $font-size: $fontSize-450,
+      $line-height: $space-375,
+      $font-family: $font-family-oulun-graadi
+    );
+  }
+}
+
+/**
+ * Heading M (H3) primary.
+ */
+@mixin heading-medium-primary() {
+  @include heading-base(
+    $font-size: $fontSize-300,
+    $line-height: $space-275,
+    $font-weight: 700,
+    $font-family: $font-family-barlow-bold,
+  );
+
+  @include mq-above($bp-small) {
+    @include heading-base(
+      $font-size: $fontSize-400,
+      $line-height: $space-300,
+      $font-weight: 700,
+      $font-family: $font-family-barlow-bold,
+    );
+  }
+}
+
+/**
+ * Heading S (H4) primary.
+ */
+@mixin heading-small-primary() {
+  @include heading-base(
+    $font-size: $fontSize-400,
+    $line-height: $space-300,
+    $font-weight: 700,
+    $letter-spacing: 0.02 * $fontSize-400,
+    $font-family: $font-family-barlow-bold,
+  );
+
+  @include mq-above($bp-small) {
+    @include heading-base(
+      $font-size: $fontSize-300,
+      $line-height: $space-275,
+      $font-weight: 700,
+      $letter-spacing: 0.02 * $fontSize-300,
+      $font-family: $font-family-barlow-bold,
+    );
+  }
+}
+
+/**
+ * Heading XS (H5) primary.
+ */
+@mixin heading-extra-small-primary() {
+  @include heading-base(
+    $font-size: $fontSize-300,
+    $line-height: $space-250,
+    $font-weight: 700,
+    $letter-spacing: 0.01 * $fontSize-300,
+    $font-family: $font-family-barlow-bold,
+  );
+}
+
+h1,
+.h1--primary {
+  @include heading-xl-primary();
+}
+
+h2,
+.h2--primary {
+  @include heading-large-primary();
+}
+
+h3,
+.h3--primary {
+  @include heading-medium-primary();
+}
+
+h4,
+.h4--primary {
+  @include heading-small-primary();
+}
+
+h5,
+.h5--primary {
+  @include heading-extra-small-primary();
+}
+
+h6,
+.h6--primary  {
+  @include heading-extra-small-primary();
+}

@@ -1,0 +1,125 @@
+@import './_functions.scss';
+
+/**
+ * Variables.
+ *
+ * General variables.
+ */
+
+// Fonts.
+// Regular.
+@font-face {
+  font-family: 'Barlow-Regular';
+  src: url('./fonts/Barlow-Regular.ttf') format('truetype');
+  src:
+          url('./fonts/Barlow-Regular.woff') format('woff'),
+          url('./fonts/Barlow-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+// Oulun Graadi.
+@font-face {
+  font-family: 'Oulun-Graadi';
+  src: url('./fonts/OulunGraadi-Otsikko.otf') format('opentype');
+  src:
+          url('./fonts/OulunGraadi-Otsikko.woff') format('woff'),
+          url('./fonts/OulunGraadi-Otsikko.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+}
+
+$font-family-barlow: 'Barlow-Regular', arial, helvetica, sans-serif;
+$font-family-barlow-medium: 'Barlow-Medium', arial, helvetica, sans-serif;
+$font-family-barlow-semibold: 'Barlow-SemiBold', arial, helvetica, sans-serif;
+$font-family-barlow-bold: 'Barlow-Bold', arial, helvetica, sans-serif;
+$font-family-oulun-graadi: 'Oulun-Graadi', arial, helvetica, sans-serif;
+$font-feature-settings-base: normal;
+$font-family-base: $font-family-barlow;
+
+// Spacing variables.
+$space-10: remify(1px);
+$space-20: remify(2px);
+$space-50: remify(4px);
+$space-60: remify(5px);
+$space-70: remify(6px);
+$space-85: remify(7px);
+$space-100: remify(8px);
+$space-125: remify(10px);
+$space-150: remify(12px);
+$space-160: remify(13px);
+$space-175: remify(14px);
+$space-190: remify(15px);
+$space-200: remify(16px);
+$space-210: remify(17px);
+$space-225: remify(18px);
+$space-250: remify(20px);
+$space-275: remify(22px);
+$space-300: remify(24px);
+$space-325: remify(25px);
+$space-350: remify(26px);
+$space-360: remify(29px);
+$space-375: remify(30px);
+$space-400: remify(32px);
+$space-425: remify(34px);
+$space-450: remify(36px);
+$space-475: remify(39px);
+$space-500: remify(40px);
+$space-550: remify(44px);
+$space-600: remify(48px);
+$space-700: remify(56px);
+
+// Max widths.
+$full-max-width: remify(1440px);
+$component-max-width: remify(720px);
+
+// Font sizes.
+$fontSize-25: remify(10px);
+$fontSize-50: remify(12px);
+$fontSize-75: remify(13px);
+$fontSize-100: remify(14px);
+$fontSize-150: remify(15px);
+$fontSize-200: remify(16px);
+$fontSize-275: remify(17px);
+$fontSize-300: remify(18px);
+$fontSize-375: remify(19px);
+$fontSize-400: remify(20px);
+$fontSize-425: remify(22px);
+$fontSize-450: remify(24px);
+$fontSize-500: remify(28px);
+$fontSize-550: remify(32px);
+$fontSize-600: remify(36px);
+$fontSize-650: remify(40px);
+$fontSize-750: remify(48px);
+$fontSize-default: $fontSize-200;
+
+/// Media query variables.
+$bp-xsmall: 420px;
+$bp-small: 768px;
+$bp-medium: 1280px;
+$bp-desktop: 1366px;
+$bp-max-width: 1440px;
+$bp-large: 1600px;
+$bp-xlarge: 1920px;
+
+// Padding variables.
+$padding-mobile: remify(24px);
+$padding-tablet: remify(40px);
+$padding-desktop: remify(80px);
+
+$padding-mobile-px: 24px;
+$padding-tablet-px: 40px;
+$padding-desktop-px: 80px;
+
+// Margin variables.
+$margin-mobile: remify(40px);
+$margin-desktop: remify(80px);
+$text-component-margin-mobile: remify(16px);
+$text-component-margin-desktop: remify(56px);
+
+// Grid column widths.
+$grid-column-width-mobile: $bp-small / 4;
+$grid-column-width-tablet: $bp-medium / 8;
+$grid-column-width-desktop: $bp-max-width / 12;

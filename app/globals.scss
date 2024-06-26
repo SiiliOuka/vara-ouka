@@ -1,0 +1,333 @@
+@import './_variables.scss';
+@import './_media-queries.scss';
+@import './_functions.scss';
+@import './_colors.scss';
+@import './_heading.scss';
+
+body {
+  background-color: usecolor('white');
+  font-size: 16px;
+  margin: 0;
+}
+
+@mixin paragraph(
+  $line-height,
+  $font-size: $fontSize-default,
+  $font-family: $font-family-base,
+  $font-feature-settings: $font-feature-settings-base,
+  $font-weight: 400,
+  $margin: 0 0 $space-300,
+  $color: usecolor('black'),
+) {
+  margin: $margin;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-feature-settings: $font-feature-settings;
+  font-weight: $font-weight;
+  color: $color;
+  letter-spacing: 0.005 * $font-size;
+}
+
+p {
+  margin: 0 0 $space-300;
+  font-size: $fontSize-300;
+  line-height: $space-325;
+  font-feature-settings: $font-feature-settings-base;
+  font-weight: 400;
+  color: usecolor('black');
+  letter-spacing: 0.005 * $fontSize-300;
+  font-family: $font-family-base;
+}
+
+.layout-container {
+  max-width: 1600px;
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #000;
+
+  a {
+    font-size: 18px;
+    color: rgb(0, 30, 150);
+    font-weight: 600;
+    text-decoration: underline;
+    font-family: "Barlow-SemiBold", arial, helvetica, sans-serif;
+    cursor: pointer;
+    line-height: 25px;
+    transition: 0.2s all ease-in-out;
+  }
+
+  a:hover {
+    color: #fff;
+    background-color: #001E96;
+    text-decoration: none;
+  }
+}
+
+.region-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 32px 0 28px 0;
+  justify-content: right;
+}
+
+.block-system-branding-block {
+  margin-right: auto;
+}
+
+.block-system-branding-block img {
+  max-width: 108px;
+  display: block;
+  height: auto;
+}
+
+.brand-stripe {
+  background-image: url('/brand-stripe.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 12px;
+}
+
+#block-ouka-language-switcher {
+  ul.links {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      font-family: 'Barlow-Regular', arial, helvetica, sans-serif;
+      font-size: remify(18px);
+      line-height: remify(22px);
+      font-weight: 400;
+      text-decoration: none;
+      color: usecolor('primary');
+
+      &:hover {
+         text-decoration: underline;
+      }
+    }
+  }
+
+  &.active-lang-en li.en,
+  &.active-lang-fi li.fi {
+    display: none;
+  }
+}
+
+header .header-wrapper,
+.footer .footer__container {
+  position: relative;
+  width: 100%;
+  max-width: 4 * $grid-column-width-mobile;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding-mobile;
+  padding-right: $padding-mobile;
+
+  @include mq-above($bp-small) {
+    max-width: 8 * $grid-column-width-tablet;
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+
+  @include mq-above($bp-medium) {
+    max-width: 12 * $grid-column-width-desktop + $padding-desktop-px * 2;
+    padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
+  }
+}
+
+.footer {
+  background: usecolor('primary');
+  margin-top: remify(120px);
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: remify(40px);
+    padding-bottom: 0;
+
+    @include mq-above($bp-small) {
+      padding-top: remify(56px);
+      padding-bottom: remify(56px);
+    }
+
+    @include mq-above($bp-medium) {
+      padding-top: remify(64px);
+      padding-bottom: remify(64px);
+    }
+  }
+
+  &__top-row {
+    width: 100%;
+    margin-bottom: remify(56px);
+
+    @include mq-above($bp-medium) {
+      margin-bottom: remify(40px);
+    }
+
+    &__logo {
+      background-image: url('/logo_horizontal_negative.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 240px;
+      height: 84px;
+    }
+  }
+
+  &__bottom-row {
+    width: 100%;
+
+    &__columns {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      @include mq-above($bp-medium) {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+
+      &__column,
+      &__logo-container {
+        width: 100%;
+        margin: 0 0 remify(56px);
+
+        @include mq-above($bp-small) {
+          width: 50%;
+          margin: 0 0 remify(36px);
+        }
+
+        @include mq-above($bp-medium) {
+          width: 23.3%;
+          margin: 0 0 remify(24px);
+        }
+
+        // Override normal text and heading styles.
+        > * {
+          color: usecolor('white');
+          margin: 0 0 remify(24px);
+        }
+
+        // Override normal link styles.
+        a {
+          font-family: $font-family-barlow-semibold;
+          font-size: $fontSize-300;
+          line-height: $space-325;
+          font-weight: 600;
+          color: usecolor('white');
+          text-decoration: underline;
+          cursor: pointer;
+          letter-spacing: 0.015 * $fontSize-300;
+          transition: 0.2s all ease-in-out;
+
+          &:visited {
+            color: usecolor('white');
+          }
+
+          &:hover {
+            color: usecolor('primary');
+            background-color: usecolor('white');
+            text-decoration: none;
+          }
+
+          &:focus {
+            border: $space-10 solid usecolor('white');
+            padding: 0 $space-20;
+            border-radius: $space-20;
+          }
+        }
+
+        // Override table styles.
+        ul, ol, li {
+          color: usecolor('white')!important;
+        }
+
+        table {
+          th,
+          td {
+            color: usecolor('white');
+            border: $space-10 solid usecolor('white');
+          }
+
+          th {
+            background-color: usecolor('primary-accent');
+          }
+        }
+      }
+
+      &__logo-container {
+        @include mq-below($bp-small) {
+          display: none;
+        }
+
+        &__logo {
+          width: 100%;
+          height: auto;
+          max-width: remify(400px);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .block-system-branding-block img {
+    max-width: 152px;
+  }
+
+  .brand-stripe {
+    height: 16px;
+  }
+
+  h1.site-title {
+    font-size: $fontSize-550;
+    line-height: $space-500;
+    margin: 0 0 $space-300;
+    font-weight: 900;
+    letter-spacing: 0.05 * $fontSize-200;
+  }
+
+  footer .footer-container {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .footer__bottom-row__columns {
+    justify-content: space-between;
+    align-content: stretch;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .region-header {
+    padding: 32px 0;
+  }
+
+  .block-system-branding-block img {
+    max-width: 184px;
+  }
+
+  .footer .footer-container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .footer .footer__top-row {
+    margin-bottom: 40px;
+  }
+}

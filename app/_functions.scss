@@ -1,0 +1,36 @@
+/**
+ * Functions.
+ *
+ * General functions.
+ */
+
+// Font-size of html element in pixels.
+$rem-base-size: 16px;
+
+/**
+ * Convert px to rem units.
+ *
+ * @param {Number} value - value in px to be converted to rem units.
+ * @param {Number} base-size - font-size of html element in pixels; defaults to $rem-base-size.
+ */
+@function remify($value, $base-size: $rem-base-size) {
+  @return $value / $base-size + 0rem; // stylelint-disable-line length-zero-no-unit
+}
+
+/**
+ * Convert rem to px units
+ *
+ * @param {Number} value - value in rem to be converted to px units.
+ */
+@function rem-to-px($value) {
+  @return $value / 1rem * $rem-base-size;
+}
+
+/**
+ * Select a color by name.
+ *
+ * @param {String} colorChoice - the desired color in string format, e.g., text.
+ */
+@function usecolor($colorChoice) {
+  @return var(--c-#{$colorChoice});
+}
