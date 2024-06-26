@@ -1,31 +1,14 @@
-@import './_variables.scss';
-@import './_media-queries.scss';
-@import './_functions.scss';
-@import './_colors.scss';
-@import './_heading.scss';
+@import './styles/_variables.scss';
+@import './styles/_media-queries.scss';
+@import './styles/_functions.scss';
+@import './styles/_colors.scss';
+@import './styles/_heading.scss';
 
 body {
   background-color: usecolor('white');
+  font-family: $font-family-base;
   font-size: 16px;
   margin: 0;
-}
-
-@mixin paragraph(
-  $line-height,
-  $font-size: $fontSize-default,
-  $font-family: $font-family-base,
-  $font-feature-settings: $font-feature-settings-base,
-  $font-weight: 400,
-  $margin: 0 0 $space-300,
-  $color: usecolor('black'),
-) {
-  margin: $margin;
-  font-size: $font-size;
-  line-height: $line-height;
-  font-feature-settings: $font-feature-settings;
-  font-weight: $font-weight;
-  color: $color;
-  letter-spacing: 0.005 * $font-size;
 }
 
 p {
@@ -40,30 +23,36 @@ p {
 }
 
 .layout-container {
-  max-width: 1600px;
-  padding-left: 80px;
-  padding-right: 80px;
-  width: 100%;
-  margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  color: #000;
-
-  a {
-    font-size: 18px;
-    color: rgb(0, 30, 150);
-    font-weight: 600;
-    text-decoration: underline;
-    font-family: "Barlow-SemiBold", arial, helvetica, sans-serif;
-    cursor: pointer;
-    line-height: 25px;
-    transition: 0.2s all ease-in-out;
+  @include mq-above($bp-small) {
+    min-height: 450px;
   }
 
-  a:hover {
-    color: #fff;
-    background-color: #001E96;
-    text-decoration: none;
+  a {
+    font-family: $font-family-barlow-semibold;
+    font-size: $fontSize-300;
+    line-height: $space-325;
+    font-weight: 600;
+    color: usecolor('primary');
+    text-decoration: underline;
+    cursor: pointer;
+    letter-spacing: 0.015 * $fontSize-300;
+    transition: 0.2s all ease-in-out;
+
+    &:visited {
+      color: usecolor('primary');
+    }
+
+    &:hover {
+      color: usecolor('white');
+      background-color: usecolor('primary');
+      text-decoration: none;
+    }
+
+    &:focus {
+      border: $space-10 solid $c-blue-500;
+      padding: 0 $space-20;
+      border-radius: $space-20;
+    }
   }
 }
 
@@ -71,8 +60,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 32px 0 28px 0;
+  padding: remify(32px) 0 remify(28px) 0;
   justify-content: right;
+
+  @include mq-above($bp-medium) {
+    padding: remify(32px) 0;
+  }
 }
 
 .block-system-branding-block {
@@ -83,6 +76,14 @@ p {
   max-width: 108px;
   display: block;
   height: auto;
+
+  @include mq-above($bp-small) {
+    max-width: 152px;
+  }
+
+  @include mq-above($bp-medium) {
+    max-width: 184px;
+  }
 }
 
 .brand-stripe {
@@ -90,6 +91,10 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   height: 12px;
+
+  @include mq-above($bp-small) {
+    height: 16px;
+  }
 }
 
 #block-ouka-language-switcher {
@@ -124,10 +129,10 @@ p {
   }
 }
 
+.layout-container,
 header .header-wrapper,
 .footer .footer__container {
   position: relative;
-  width: 100%;
   max-width: 4 * $grid-column-width-mobile;
   margin-left: auto;
   margin-right: auto;
@@ -282,52 +287,5 @@ header .header-wrapper,
         }
       }
     }
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .block-system-branding-block img {
-    max-width: 152px;
-  }
-
-  .brand-stripe {
-    height: 16px;
-  }
-
-  h1.site-title {
-    font-size: $fontSize-550;
-    line-height: $space-500;
-    margin: 0 0 $space-300;
-    font-weight: 900;
-    letter-spacing: 0.05 * $fontSize-200;
-  }
-
-  footer .footer-container {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-
-  .footer__bottom-row__columns {
-    justify-content: space-between;
-    align-content: stretch;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .region-header {
-    padding: 32px 0;
-  }
-
-  .block-system-branding-block img {
-    max-width: 184px;
-  }
-
-  .footer .footer-container {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-
-  .footer .footer__top-row {
-    margin-bottom: 40px;
   }
 }

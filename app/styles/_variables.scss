@@ -10,10 +10,10 @@
 // Regular.
 @font-face {
   font-family: 'Barlow-Regular';
-  src: url('./fonts/Barlow-Regular.ttf') format('truetype');
+  src: url('../fonts/Barlow-Regular.ttf') format('truetype');
   src:
-          url('./fonts/Barlow-Regular.woff') format('woff'),
-          url('./fonts/Barlow-Regular.woff2') format('woff2');
+          url('../fonts/Barlow-Regular.woff') format('woff'),
+          url('../fonts/Barlow-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
   font-display: block;
@@ -22,10 +22,10 @@
 // Oulun Graadi.
 @font-face {
   font-family: 'Oulun-Graadi';
-  src: url('./fonts/OulunGraadi-Otsikko.otf') format('opentype');
+  src: url('../fonts/OulunGraadi-Otsikko.otf') format('opentype');
   src:
-          url('./fonts/OulunGraadi-Otsikko.woff') format('woff'),
-          url('./fonts/OulunGraadi-Otsikko.woff2') format('woff2');
+          url('../fonts/OulunGraadi-Otsikko.woff') format('woff'),
+          url('../fonts/OulunGraadi-Otsikko.woff2') format('woff2');
   font-style: normal;
   font-weight: 900;
   font-display: block;
