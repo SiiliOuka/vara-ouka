@@ -22,7 +22,7 @@ p {
   font-family: $font-family-base;
 }
 
-.layout-container {
+main {
   @include mq-above($bp-small) {
     min-height: 450px;
   }
@@ -129,7 +129,7 @@ p {
   }
 }
 
-.layout-container,
+main,
 header .header-wrapper,
 .footer .footer__container {
   position: relative;
