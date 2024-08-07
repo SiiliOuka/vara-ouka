@@ -24,7 +24,7 @@ async function getData() {
     }`;
 
   const data = await hygraph.request(query);
-  return data.pageContents[0].content.html
+  return data.pageContents[0].content.html ?? ''
 }
 
 export default async function Home() {
