@@ -1,21 +1,35 @@
 # Vara.ouka.fi
 ## Getting Started
 
-First, run the development server:
+## Install nvm (Node Version Manager)
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+### Download and install Node.js (you may need to restart the terminal)
+```bash
+nvm install
+```
+
+### Verify the right Node.js version is used
+```bash
+node -v
+```
+Should print `v20.16.0`
+
+### Verify the right npm version is used
+```bash
+npm -v
+```
+Should print `10.8.1`
+
+### Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 ## Page changes
 You can edit the Finnish page in page.js file and the English page in en/page.js
