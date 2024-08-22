@@ -152,6 +152,10 @@ header .header-wrapper,
   }
 }
 
+main {
+  min-height: 61.75vh;
+}
+
 .footer {
   background: usecolor('primary');
   margin-top: remify(120px);
@@ -177,6 +181,12 @@ header .header-wrapper,
     width: 100%;
     margin-bottom: remify(56px);
 
+    @include mq-above($bp-small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     @include mq-above($bp-medium) {
       margin-bottom: remify(40px);
     }
@@ -187,105 +197,15 @@ header .header-wrapper,
       background-size: cover;
       width: 240px;
       height: 84px;
+      margin-bottom: remify(40px);
+
+      @include mq-above($bp-small) {
+        margin-bottom: 0;
+      }
     }
-  }
 
-  &__bottom-row {
-    width: 100%;
-
-    &__columns {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: flex-start;
-
-      @include mq-above($bp-medium) {
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: space-between;
-      }
-
-      &__column,
-      &__logo-container {
-        width: 100%;
-        margin: 0 0 remify(56px);
-
-        @include mq-above($bp-small) {
-          width: 50%;
-          margin: 0 0 remify(36px);
-        }
-
-        @include mq-above($bp-medium) {
-          width: 23.3%;
-          margin: 0 0 remify(24px);
-        }
-
-        // Override normal text and heading styles.
-        > * {
-          color: usecolor('white');
-          margin: 0 0 remify(24px);
-        }
-
-        // Override normal link styles.
-        a {
-          font-family: $font-family-barlow-semibold;
-          font-size: $fontSize-300;
-          line-height: $space-325;
-          font-weight: 600;
-          color: usecolor('white');
-          text-decoration: underline;
-          cursor: pointer;
-          letter-spacing: 0.015 * $fontSize-300;
-          transition: 0.2s all ease-in-out;
-
-          &:visited {
-            color: usecolor('white');
-          }
-
-          &:hover {
-            color: usecolor('primary');
-            background-color: usecolor('white');
-            text-decoration: none;
-          }
-
-          &:focus {
-            border: $space-10 solid usecolor('white');
-            padding: 0 $space-20;
-            border-radius: $space-20;
-          }
-        }
-
-        // Override table styles.
-        ul, ol, li {
-          color: usecolor('white')!important;
-        }
-
-        table {
-          th,
-          td {
-            color: usecolor('white');
-            border: $space-10 solid usecolor('white');
-          }
-
-          th {
-            background-color: usecolor('primary-accent');
-          }
-        }
-      }
-
-      &__logo-container {
-        @include mq-below($bp-small) {
-          display: none;
-        }
-
-        &__logo {
-          width: 100%;
-          height: auto;
-          max-width: remify(400px);
-          margin-bottom: 0;
-        }
-      }
+    &__name h3 {
+      color: usecolor('white');
     }
   }
 }
