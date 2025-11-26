@@ -3,6 +3,7 @@
 import { Inter } from "next/font/google";
 import { usePathname } from 'next/navigation';
 import Image from 'next/image'
+import Link from 'next/link'
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,9 +26,9 @@ export default function RootLayout({ children }) {
           <div className="header-wrapper">
             <div className="region region-header">
               <div id="block-sitebranding" className="block block-system block-system-branding-block">
-                <a href="/" rel="home" className="site-logo">
+                <Link href="/" rel="home" className="site-logo">
                   <Image src={`site-logo.svg`} alt="Etusivu" width="164" height="62" />
-                </a>
+                </Link>
               </div>
 
               <div className={activeLocaleClass}
@@ -36,14 +37,14 @@ export default function RootLayout({ children }) {
 
                 <ul className="links">
                   <li className="fi">
-                    <a href="/" className="language-link" hrefLang="fi">
+                    <Link href="/" className="language-link" hrefLang="fi">
                       Suomi
-                    </a>
+                    </Link>
                   </li>
                   <li className="en">
-                    <a href="/en" className="language-link" hrefLang="en">
+                    <Link href="/en" className="language-link" hrefLang="en">
                       English
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
